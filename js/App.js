@@ -25,9 +25,12 @@ function drawWeather(d) {
   let div = document.querySelector(".box");
   const output = `
   <div class="weather">
-    <h1 id="description">${d.weather[0].mainHaze}</h1>
+    <h1 id="description">${d.weather[0].main}</h1>
     <h1 id="temp">${celcius}°c</h1>
     <h1 id="city">${d.name}</h1>
   </div>`;
   div.innerHTML = output;
+  if ((d.weather[0].main = Clouds)) {
+  }
+  const body = document.querySelector("body");
 }

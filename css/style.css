@@ -1,27 +1,20 @@
 form {
   display: flex;
 }
-/* #form {
-  width: 250px;
-  height: 30px;
-  border-radius: 30px;
-  border: 1px solid red;
-} */
 input[type="text"] {
   width: 450px;
   padding: 12px 20px;
   margin: 8px 0;
   border: 1px solid red;
   box-sizing: border-box;
-  border-radius: 35px;
 }
 input[type="submit"] {
   width: 90px;
+  margin-left: 30px;
   /* padding: 12px 20px; */
   margin: 8px 0;
   border: 1px solid red;
   box-sizing: border-box;
-  border-radius: 30px;
 }
 .weather {
   width: 20rem;
@@ -34,4 +27,9 @@ input[type="submit"] {
   justify-items: center;
   justify-content: center;
   color: white;
+}
+body {
+  /* background-image: url("../img/cloud.jpg"); */
+  width: 100vh;
+  height: 100%;
 }
