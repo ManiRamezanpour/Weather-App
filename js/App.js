@@ -1,12 +1,17 @@
 //TODO 1. Get the city Name :
+
+const div = document.querySelector(".box");
 const btn = document.getElementById("submit");
+
 btn.addEventListener("click", (e) => {
   e.preventDefault(); // disable the refresh on the page when submit
   const cityName = document.getElementById("form").value;
   Func(cityName);
+  console.log(cityName);
 });
 
 //TODO 2. Get the city data with API :
+
 function Func(_cityName) {
   const key = "63bcf1f93b394d200a4837c07f5e09d6";
   fetch(
@@ -14,23 +19,57 @@ function Func(_cityName) {
   )
     .then((response) => response.json())
     .then((json) => {
-      drawWeather(json);
       console.log(json);
+      init(json);
     }) // Call drawWeather
-    .catch(() => {});
+    .catch(() => alert("Please check the city name  "));
 }
 
-function drawWeather(d) {
-  var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-  let div = document.querySelector(".box");
+function init(e) {
+  let kelvin = 273;
+  let temp = Math.floor(e.main.temp - kelvin) + "°C";
+  // console.log(temp);icons/${icon1}.svg
+  let descript = e.weather[0].description;
+  console.log(descript);
+  let wIconSrc =
+    "http://openweathermap.org/img/w/" + e.weather[0].icon + ".png";
+  // console.log(wIcon);
   const output = `
-  <div class="weather">
-    <h1 id="description">${d.weather[0].main}</h1>
-    <h1 id="temp">${celcius}°c</h1>
-    <h1 id="city">${d.name}</h1>
-  </div>`;
+    <div class="weather">
+      <div id="temp">
+        <h1 id="description">${temp}</h1>
+        <img src="${wIconSrc}" style= 'height:10rem'/>
+      </div>
+        <h1 id="temp">${descript}</h1>
+    </div>`;
   div.innerHTML = output;
-  if ((d.weather[0].main = Clouds)) {
+  switch (e.weather[0].main) {
+    case "Clear":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    case "Clouds":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    case "Rain":
+    case "Drizzle":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    case "Mist":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    case "Thunderstorm":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    case "Snow":
+      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      break;
+
+    default:
+      break;
   }
-  const body = document.querySelector("body");
 }
