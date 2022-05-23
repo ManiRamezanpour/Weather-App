@@ -27,7 +27,7 @@ function Func(_cityName) {
 
 function init(e) {
   let kelvin = 273;
-  let temp = Math.floor(e.main.temp - kelvin) + "°C";
+  let temp = Math.floor(e.main.temp - kelvin) + "°c";
   // console.log(temp);icons/${icon1}.svg
   let descript = e.weather[0].description;
   console.log(descript);
@@ -38,14 +38,15 @@ function init(e) {
     <div class="weather">
       <div id="temp">
         <h1 id="description">${temp}</h1>
-        <img src="${wIconSrc}" style= 'height:10rem'/>
+        <img src="${wIconSrc}" style= 'height:8rem' class="img"/>
       </div>
-        <h1 id="temp">${descript}</h1>
+        <h1 id="datades">${descript}</h1>
     </div>`;
   div.innerHTML = output;
   switch (e.weather[0].main) {
     case "Clear":
       document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+
       break;
 
     case "Clouds":
@@ -66,7 +67,7 @@ function init(e) {
       break;
 
     case "Snow":
-      document.body.style.backgroundImage = "url('./img/cloud.jpg')";
+      document.footer.style.backgroundImage = "url('./img/cloud.jpg')";
       break;
 
     default:

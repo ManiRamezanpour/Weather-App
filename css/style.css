@@ -1,36 +1,75 @@
-form {
+body {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #16003b;
+  color: #f73d93;
+}
+.title {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+form {
+  /* display: flex; */
 }
 input[type="text"] {
+  background: local;
   width: 450px;
   padding: 12px 20px;
+  outline: none;
   margin: 8px 0;
-  border: 1px solid red;
+  border-radius: 20px;
+  border: 3px solid #f73d93;
   box-sizing: border-box;
+}
+input[type="text"] {
+  color: #f73d93;
+  font-size: x-large;
 }
 input[type="submit"] {
-  width: 90px;
-  margin-left: 30px;
-  /* padding: 12px 20px; */
-  margin: 8px 0;
-  border: 1px solid red;
-  box-sizing: border-box;
+  background: local;
+  border-radius: 20px;
+  /* width: 90px; */
+  padding: 12px 20px;
+  border: #f73d93 3px solid;
+  color: #f73d93;
+  font-size: x-large;
+  /* box-sizing: border-box; */
 }
+#submit:hover {
+  background-color: #f73d93;
+  animation-delay: 2ms;
+  border: 3px solid #ffffff;
+  color: #ffffff;
+}
+
 .weather {
-  background-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 1px 1px 5px black;
-  padding: 35px;
+  width: 300px;
+  background-color: #16003b;
+  color: #f73d93;
+  /* box-shadow: 1px 1px 5px black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 10px;
-  position: absolute;
-  /* visibility: hidden; */
-}
-body {
-  /* background-image: url("../img/cloud.jpg"); */
-  width: 100vh;
-  height: 100%;
+  text-align: center;
 }
 
 #temp {
   display: flex;
   flex-direction: row;
+  padding-left: 40px;
+  font-size: xx-large;
+}
+
+.datades {
+  font-size: xx-large;
+}
+
+footer {
+  margin-top: 100px;
+  background-color: #16003b;
+  width: 100%;
+  text-align: center;
+  color: #f73d93;
 }
